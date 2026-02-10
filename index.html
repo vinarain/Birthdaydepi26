@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Depi</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ede0d4, #ddb892, #b08968);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 38px;
+    color: #7f5539;
+}
+
+.photo {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 8px solid #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    margin: 25px 0;
+    animation: float 3s infinite ease-in-out;
+}
+
+.message {
+    font-size: 18px;
+    max-width: 520px;
+    margin: auto;
+    color: #4a2c2a;
+    line-height: 1.7;
+}
+
+.footer {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #7f5539;
+    display: none;
+}
+
+@keyframes float {
+    0%,100% {transform: translateY(0);}
+    50% {transform: translateY(-12px);}
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    animation: fall 6s linear infinite;
+}
+
+@keyframes fall {
+    to {transform: translateY(110vh) rotate(360deg);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎂 Happy Birthday Depi Akbar ✨</h1>
+
+    <img src="foto.jpg" class="photo">
+
+    <div class="message">
+        Semoga hari-hari bebe selalu dipenuhi kebahagiaan, tawa, dan hal-hal indah.<br><br>
+        Semoga semua mimpi dan harapan bebe satu per satu bisa tercapai.<br><br>
+        Tetap jadi pribadi yang baik, ceria, dan selalu membawa kebahagiaan buat banyak orang ya, bebe 🤎
+    </div>
+
+    <div class="footer" id="closing">
+        Have the cutest birthday ever, bebe! 🎀🥳
+    </div>
+</div>
+
+<audio id="music" autoplay loop>
+    <source src="bergema-sampai-selamanya.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+setTimeout(() => {
+    document.getElementById("closing").style.display = "block";
+}, 5000);
+
+for(let i=0;i<45;i++){
+    let c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(4+Math.random()*3)+"s";
+    c.style.backgroundColor=`hsl(30, 40%, ${60+Math.random()*20}%)`;
+    document.body.appendChild(c);
+}
+</script>
+
+</body>
+</html>
