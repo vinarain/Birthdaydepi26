@@ -6,54 +6,43 @@
 <title>Special For You</title>
 
 <style>
-
 body{
 margin:0;
-font-family:'Poppins', sans-serif;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#f5ebe0,#e3d5ca,#d5bdaf);
 text-align:center;
-overflow:hidden;
 color:#6b4f4f;
-}
-
-.gift{
-margin-top:120px;
-cursor:pointer;
-transition:0.5s;
-}
-
-.gift img{
-width:150px;
-}
-
-.main{
-display:none;
-padding:30px;
+overflow:hidden;
 }
 
 .photo{
-width:230px;
-height:230px;
+width:220px;
+height:220px;
 border-radius:50%;
 border:8px solid white;
 object-fit:cover;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-margin:25px 0;
-animation:float 3s infinite ease-in-out;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0)}
-50%{transform:translateY(-12px)}
+margin-top:40px;
 }
 
 .text{
 opacity:0;
 transition:2s;
-font-size:18px;
 max-width:520px;
-margin:20px auto;
+margin:18px auto;
+font-size:18px;
 line-height:1.7;
+}
+
+.playBtn{
+margin-top:20px;
+background:#7f5539;
+color:white;
+border:none;
+padding:14px 26px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
 }
 
 .heart{
@@ -68,46 +57,70 @@ transform:translateY(110vh);
 opacity:0;
 }
 }
-
 </style>
 </head>
+
 <body>
 
-<!-- 🎁 GIFT -->
-<div class="gift" onclick="openGift()">
-<img src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
-<h3>🎁 Klik kado ini</h3>
-</div>
-
-<!-- 💖 CONTENT -->
-<div class="main" id="mainContent">
-
-<h1>🎂 Happy Birthday Depi Akbar ✨</h1>
+<h2>🎂 Happy Birthday Depi Akbar ✨</h2>
 
 <img src="foto.jpg" class="photo">
 
 <div class="text" id="t1">
-Hari ini adalah hari spesial, hari dimana seseorang yang sangat berharga lahir ke dunia.  
-Aku berharap setiap langkah yang bebe jalani selalu dipenuhi kebahagiaan, ketenangan, dan hal-hal baik yang tidak pernah habis 🤎
+Hari ini adalah hari spesial...
 </div>
 
 <div class="text" id="t2">
-Semoga semua mimpi yang bebe simpan diam-diam, semua harapan yang bebe perjuangkan, perlahan bisa terwujud satu per satu.  
-Semoga setiap usaha yang bebe lakukan selalu menemukan jalannya menuju kebahagiaan ✨
+Semoga semua mimpi bebe bisa tercapai ✨
 </div>
 
 <div class="text" id="t3">
-Terima kasih karena sudah menjadi pribadi yang kuat, hangat, dan penuh perhatian.  
-Kehadiran bebe membawa warna, membawa cerita, dan membuat banyak hal terasa lebih berarti.
+Terima kasih sudah hadir membawa warna 🤎
 </div>
 
 <div class="text" id="t4">
-Aku berharap di umur yang baru ini, bebe selalu dikelilingi orang-orang yang tulus, selalu diberi kesehatan, dan selalu dipertemukan dengan hal-hal yang membuat bebe tersenyum 🤍
+Have the cutest birthday ever 💕
 </div>
 
-<div class="text" id="t5">
-Dan semoga, setiap hari yang bebe jalani ke depan dipenuhi dengan kebahagiaan sederhana yang membuat hati terasa tenang dan nyaman.
-</div>
+<button class="playBtn" onclick="playMusic()">
+🎵 Putar Lagu
+</button>
+
+<script>
+
+/* TEXT TIMING */
+setTimeout(()=>show("t1"),1000);
+setTimeout(()=>show("t2"),6000);
+setTimeout(()=>show("t3"),11000);
+setTimeout(()=>show("t4"),16000);
+
+function show(id){
+document.getElementById(id).style.opacity=1;
+}
+
+/* MUSIC */
+function playMusic(){
+window.open(
+"https://drive.google.com/file/d/195LFn8isrDQUHUq6xpBI6Og_VH6asnRp/preview",
+"_blank"
+);
+}
+
+/* HEARTS */
+setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="🤎";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+</script>
+
+</body>
+</html></div>
 
 <div class="text" id="t6">
 Have the cutest birthday ever, bebe 💕  
