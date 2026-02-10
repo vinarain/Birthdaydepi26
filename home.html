@@ -3,28 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday</title>
+<title>Special For You</title>
 
 <style>
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:'Segoe UI', sans-serif;
 background:linear-gradient(135deg,#f5ebe0,#e3d5ca,#d5bdaf);
 text-align:center;
 color:#6b4f4f;
 overflow:hidden;
 }
 
+/* INTRO SCREEN */
+.intro{
+position:fixed;
+width:100%;
+height:100vh;
+background:#f5ebe0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:10;
+animation:fadeOut 2s forwards;
+animation-delay:3s;
+}
+
+@keyframes fadeOut{
+to{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* GIFT */
+.gift{
+margin-top:80px;
+cursor:pointer;
+}
+
+.gift img{
+width:160px;
+transition:0.4s;
+}
+
+.gift img:hover{
+transform:scale(1.1);
+}
+
+/* MAIN CONTENT */
+.main{
+display:none;
+padding:20px;
+}
+
 .photo{
-width:220px;
-height:220px;
+width:230px;
+height:230px;
 border-radius:50%;
 border:8px solid white;
 object-fit:cover;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-margin-top:40px;
+margin:25px 0;
+animation:float 3s infinite ease-in-out;
 }
 
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+}
+
+/* TEXT */
 .text{
 opacity:0;
 transition:2s;
@@ -34,6 +85,7 @@ font-size:18px;
 line-height:1.7;
 }
 
+/* BUTTON */
 .playBtn{
 margin-top:20px;
 background:#7f5539;
@@ -45,6 +97,7 @@ font-size:16px;
 cursor:pointer;
 }
 
+/* HEART PARTICLES */
 .heart{
 position:fixed;
 font-size:20px;
@@ -57,33 +110,75 @@ transform:translateY(110vh);
 opacity:0;
 }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
+<div class="intro">
+<h2>✨ Something Special For You ✨</h2>
+<p>Tunggu sebentar ya...</p>
+</div>
+
+<!-- GIFT -->
+<div class="gift" onclick="openGift()">
+<img src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+<h3>Klik kado ini 🎁</h3>
+</div>
+
+<!-- MAIN -->
+<div class="main" id="main">
+
 <h2>🎂 Happy Birthday Depi Akbar ✨</h2>
 
 <img src="foto.jpg" class="photo">
 
-<div class="text" id="t1">Hari ini adalah hari spesial...</div>
-<div class="text" id="t2">Semoga semua mimpi bebe bisa tercapai ✨</div>
-<div class="text" id="t3">Terima kasih sudah hadir membawa warna 🤎</div>
-<div class="text" id="t4">Have the cutest birthday ever 💕</div>
+<div class="text" id="t1">
+Hari ini adalah hari dimana seseorang yang sangat berharga lahir ke dunia 🤎
+</div>
+
+<div class="text" id="t2">
+Semoga setiap langkah yang bebe jalani selalu dipenuhi kebahagiaan, ketenangan, dan cinta.
+</div>
+
+<div class="text" id="t3">
+Semoga semua mimpi dan harapan bebe perlahan menemukan jalannya satu per satu ✨
+</div>
+
+<div class="text" id="t4">
+Terima kasih sudah menjadi pribadi yang hangat dan membawa warna dalam banyak cerita.
+</div>
+
+<div class="text" id="t5">
+Have the cutest birthday ever bebe 💕
+</div>
 
 <button class="playBtn" onclick="playMusic()">🎵 Putar Lagu</button>
 
+</div>
+
 <script>
 
-function show(id){
-document.getElementById(id).style.opacity = 1;
-}
+/* OPEN GIFT */
+function openGift(){
+document.querySelector(".gift").style.display="none";
+document.getElementById("main").style.display="block";
 
 setTimeout(()=>show("t1"),1000);
 setTimeout(()=>show("t2"),6000);
 setTimeout(()=>show("t3"),11000);
 setTimeout(()=>show("t4"),16000);
+setTimeout(()=>show("t5"),21000);
+}
 
+/* SHOW TEXT */
+function show(id){
+document.getElementById(id).style.opacity=1;
+}
+
+/* MUSIC */
 function playMusic(){
 window.open(
 "https://drive.google.com/file/d/195LFn8isrDQUHUq6xpBI6Og_VH6asnRp/preview",
@@ -91,6 +186,7 @@ window.open(
 );
 }
 
+/* HEART EFFECT */
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
