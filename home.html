@@ -16,7 +16,6 @@ color:#6b4f4f;
 overflow:hidden;
 }
 
-/* INTRO SCREEN */
 .intro{
 position:fixed;
 width:100%;
@@ -38,7 +37,6 @@ visibility:hidden;
 }
 }
 
-/* GIFT */
 .gift{
 margin-top:80px;
 cursor:pointer;
@@ -46,14 +44,8 @@ cursor:pointer;
 
 .gift img{
 width:160px;
-transition:0.4s;
 }
 
-.gift img:hover{
-transform:scale(1.1);
-}
-
-/* MAIN CONTENT */
 .main{
 display:none;
 padding:20px;
@@ -75,17 +67,15 @@ animation:float 3s infinite ease-in-out;
 50%{transform:translateY(-12px)}
 }
 
-/* TEXT */
 .text{
 opacity:0;
 transition:2s;
-max-width:520px;
-margin:18px auto;
+max-width:540px;
+margin:20px auto;
 font-size:18px;
-line-height:1.7;
+line-height:1.8;
 }
 
-/* BUTTON */
 .playBtn{
 margin-top:20px;
 background:#7f5539;
@@ -97,7 +87,6 @@ font-size:16px;
 cursor:pointer;
 }
 
-/* HEART PARTICLES */
 .heart{
 position:fixed;
 font-size:20px;
@@ -116,19 +105,16 @@ opacity:0;
 
 <body>
 
-<!-- INTRO -->
 <div class="intro">
-<h2>✨ Something Special For You ✨</h2>
+<h2>✨ Ada sesuatu yang ingin aku sampaikan ✨</h2>
 <p>Tunggu sebentar ya...</p>
 </div>
 
-<!-- GIFT -->
 <div class="gift" onclick="openGift()">
 <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
 <h3>Klik kado ini 🎁</h3>
 </div>
 
-<!-- MAIN -->
 <div class="main" id="main">
 
 <h2>🎂 Happy Birthday Depi Akbar ✨</h2>
@@ -136,23 +122,36 @@ opacity:0;
 <img src="foto.jpg" class="photo">
 
 <div class="text" id="t1">
-Hari ini adalah hari dimana seseorang yang sangat berharga lahir ke dunia 🤎
+Hari ini adalah hari yang sangat spesial. Hari dimana seseorang yang begitu berarti hadir ke dunia dan membawa banyak kebaikan, kehangatan, dan cerita indah bagi orang-orang di sekitarnya.  
+Aku berharap di hari ulang tahun ini, bebe benar-benar merasakan betapa berharganya diri bebe, betapa banyak hal baik yang sudah bebe lakukan, dan betapa besar kebahagiaan yang bebe berikan kepada banyak orang 🤎
 </div>
 
 <div class="text" id="t2">
-Semoga setiap langkah yang bebe jalani selalu dipenuhi kebahagiaan, ketenangan, dan cinta.
+Semoga setiap langkah yang bebe jalani ke depan selalu dipenuhi rasa tenang, rasa yakin, dan harapan yang tidak pernah padam.  
+Semoga semua usaha yang bebe lakukan, sekecil apapun, selalu menemukan jalannya menuju keberhasilan dan kebahagiaan yang bebe impikan ✨
 </div>
 
 <div class="text" id="t3">
-Semoga semua mimpi dan harapan bebe perlahan menemukan jalannya satu per satu ✨
+Terima kasih karena sudah menjadi pribadi yang kuat, sabar, hangat, dan penuh perhatian.  
+Tidak semua orang bisa menjadi sosok yang mampu memberi rasa nyaman kepada orang lain, tapi bebe melakukannya dengan cara yang begitu alami dan tulus.
 </div>
 
 <div class="text" id="t4">
-Terima kasih sudah menjadi pribadi yang hangat dan membawa warna dalam banyak cerita.
+Aku berharap di umur yang baru ini, bebe selalu dikelilingi oleh orang-orang yang tulus mencintai bebe, selalu diberi kesehatan, dan selalu dipertemukan dengan hal-hal yang membuat hati bebe tersenyum tanpa alasan.
 </div>
 
 <div class="text" id="t5">
-Have the cutest birthday ever bebe 💕
+Dan semoga setiap hari yang bebe jalani ke depan bukan hanya tentang mencapai mimpi, tapi juga tentang menikmati setiap prosesnya, menemukan kebahagiaan sederhana, dan merasakan bahwa hidup ini selalu punya cara untuk memberikan kejutan indah.
+</div>
+
+<div class="text" id="t6">
+Terima kasih sudah hadir di dunia ini. Terima kasih sudah menjadi seseorang yang begitu berarti.  
+Semoga semua doa baik selalu menyertai setiap langkah bebe.
+</div>
+
+<div class="text" id="t7">
+Have the cutest, happiest, and warmest birthday ever, bebe 💕  
+Semoga hari ini menjadi awal dari cerita-cerita indah yang akan terus berlanjut.
 </div>
 
 <button class="playBtn" onclick="playMusic()">🎵 Putar Lagu</button>
@@ -161,24 +160,23 @@ Have the cutest birthday ever bebe 💕
 
 <script>
 
-/* OPEN GIFT */
 function openGift(){
 document.querySelector(".gift").style.display="none";
 document.getElementById("main").style.display="block";
 
 setTimeout(()=>show("t1"),1000);
-setTimeout(()=>show("t2"),6000);
-setTimeout(()=>show("t3"),11000);
-setTimeout(()=>show("t4"),16000);
-setTimeout(()=>show("t5"),21000);
+setTimeout(()=>show("t2"),7000);
+setTimeout(()=>show("t3"),14000);
+setTimeout(()=>show("t4"),21000);
+setTimeout(()=>show("t5"),28000);
+setTimeout(()=>show("t6"),35000);
+setTimeout(()=>show("t7"),42000);
 }
 
-/* SHOW TEXT */
 function show(id){
 document.getElementById(id).style.opacity=1;
 }
 
-/* MUSIC */
 function playMusic(){
 window.open(
 "https://drive.google.com/file/d/195LFn8isrDQUHUq6xpBI6Og_VH6asnRp/preview",
@@ -186,7 +184,6 @@ window.open(
 );
 }
 
-/* HEART EFFECT */
 setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
