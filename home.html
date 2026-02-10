@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special For You</title>
+<title>Happy Birthday</title>
 
 <style>
 body{
@@ -66,39 +66,24 @@ opacity:0;
 
 <img src="foto.jpg" class="photo">
 
-<div class="text" id="t1">
-Hari ini adalah hari spesial...
-</div>
+<div class="text" id="t1">Hari ini adalah hari spesial...</div>
+<div class="text" id="t2">Semoga semua mimpi bebe bisa tercapai ✨</div>
+<div class="text" id="t3">Terima kasih sudah hadir membawa warna 🤎</div>
+<div class="text" id="t4">Have the cutest birthday ever 💕</div>
 
-<div class="text" id="t2">
-Semoga semua mimpi bebe bisa tercapai ✨
-</div>
-
-<div class="text" id="t3">
-Terima kasih sudah hadir membawa warna 🤎
-</div>
-
-<div class="text" id="t4">
-Have the cutest birthday ever 💕
-</div>
-
-<button class="playBtn" onclick="playMusic()">
-🎵 Putar Lagu
-</button>
+<button class="playBtn" onclick="playMusic()">🎵 Putar Lagu</button>
 
 <script>
 
-/* TEXT TIMING */
+function show(id){
+document.getElementById(id).style.opacity = 1;
+}
+
 setTimeout(()=>show("t1"),1000);
 setTimeout(()=>show("t2"),6000);
 setTimeout(()=>show("t3"),11000);
 setTimeout(()=>show("t4"),16000);
 
-function show(id){
-document.getElementById(id).style.opacity=1;
-}
-
-/* MUSIC */
 function playMusic(){
 window.open(
 "https://drive.google.com/file/d/195LFn8isrDQUHUq6xpBI6Og_VH6asnRp/preview",
@@ -106,8 +91,20 @@ window.open(
 );
 }
 
-/* HEARTS */
 setInterval(()=>{
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="🤎";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+</script>
+
+</body>
+</html>setInterval(()=>{
 let heart=document.createElement("div");
 heart.className="heart";
 heart.innerHTML="🤎";
