@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Birthday</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ede0d4,#ddb892,#b08968);
+text-align:center;
+}
+
+.container{
+margin-top:60px;
+}
+
+.photo{
+width:220px;
+height:220px;
+border-radius:50%;
+border:8px solid white;
+object-fit:cover;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.message{
+max-width:500px;
+margin:20px auto;
+font-size:18px;
+color:#4a2c2a;
+}
+
+button{
+background:#7f5539;
+color:white;
+border:none;
+padding:14px 25px;
+border-radius:30px;
+cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday Depi Akbar ✨</h1>
+
+<img src="foto.jpg" class="photo">
+
+<div class="message">
+Semoga hari-hari bebe selalu dipenuhi kebahagiaan, tawa, dan hal-hal indah.<br><br>
+Semoga semua mimpi dan harapan bebe satu per satu bisa tercapai.<br><br>
+Tetap jadi pribadi yang baik, ceria, dan selalu membawa kebahagiaan buat banyak orang ya, bebe 🤎
+</div>
+
+<button onclick="playMusic()">🎵 Putar Lagu</button>
+
+</div>
+
+<audio id="music" loop>
+<source src="bergema-sampai-selamanya.mp3">
+</audio>
+
+<script>
+function playMusic(){
+document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
