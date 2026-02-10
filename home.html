@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:linear-gradient(135deg,#ede0d4,#ddb892,#b08968);
 text-align:center;
+color:#4a2c2a;
 }
 
 .container{
 margin-top:60px;
+padding:20px;
 }
 
 .photo{
@@ -22,27 +26,31 @@ border-radius:50%;
 border:8px solid white;
 object-fit:cover;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
+margin:25px 0;
+animation:float 3s infinite ease-in-out;
 }
 
 .message{
-max-width:500px;
-margin:20px auto;
+max-width:520px;
+margin:auto;
 font-size:18px;
-color:#4a2c2a;
+line-height:1.7;
 }
 
-button{
-background:#7f5539;
-color:white;
-border:none;
-padding:14px 25px;
-border-radius:30px;
-cursor:pointer;
+.tap{
+margin-top:30px;
+font-size:16px;
+opacity:0.7;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
 }
 </style>
-
 </head>
-<body>
+
+<body onclick="playMusic()">
 
 <div class="container">
 
@@ -56,17 +64,24 @@ Semoga semua mimpi dan harapan bebe satu per satu bisa tercapai.<br><br>
 Tetap jadi pribadi yang baik, ceria, dan selalu membawa kebahagiaan buat banyak orang ya, bebe 🤎
 </div>
 
-<button onclick="playMusic()">🎵 Putar Lagu</button>
+<div class="tap">
+🤎 Sentuh layar untuk memutar lagu
+</div>
 
 </div>
 
 <audio id="music" loop>
-<source src="bergema-sampai-selamanya.mp3">
+<source src="bergema-sampai-selamanya.mp3" type="audio/mpeg">
 </audio>
 
 <script>
+let played = false;
+
 function playMusic(){
+if(!played){
 document.getElementById("music").play();
+played = true;
+}
 }
 </script>
 
