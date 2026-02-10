@@ -1,113 +1,81 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Depi</title>
+<title>Secret Page</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ede0d4, #ddb892, #b08968);
-    text-align: center;
-    overflow-x: hidden;
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ede0d4,#ddb892,#b08968);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
 }
 
-.container {
-    margin-top: 60px;
-    padding: 20px;
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-h1 {
-    font-size: 38px;
-    color: #7f5539;
+input{
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:10px;
+width:220px;
+text-align:center;
+font-size:16px;
 }
 
-.photo {
-    width: 230px;
-    height: 230px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 8px solid #fff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    margin: 25px 0;
-    animation: float 3s infinite ease-in-out;
-}
-
-.message {
-    font-size: 18px;
-    max-width: 520px;
-    margin: auto;
-    color: #4a2c2a;
-    line-height: 1.7;
-}
-
-.footer {
-    margin-top: 30px;
-    font-size: 20px;
-    color: #7f5539;
-    display: none;
-}
-
-@keyframes float {
-    0%,100% {transform: translateY(0);}
-    50% {transform: translateY(-12px);}
-}
-
-.confetti {
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    top: -10px;
-    animation: fall 6s linear infinite;
-}
-
-@keyframes fall {
-    to {transform: translateY(110vh) rotate(360deg);}
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-    <h1>🎂 Happy Birthday Depi Akbar ✨</h1>
-
-    <img src="foto.jpg" class="photo">
-
-    <div class="message">
-        Semoga hari-hari bebe selalu dipenuhi kebahagiaan, tawa, dan hal-hal indah.<br><br>
-        Semoga semua mimpi dan harapan bebe satu per satu bisa tercapai.<br><br>
-        Tetap jadi pribadi yang baik, ceria, dan selalu membawa kebahagiaan buat banyak orang ya, bebe 🤎
-    </div>
-
-    <div class="footer" id="closing">
-        Have the cutest birthday ever, bebe! 🎀🥳
-        <button onclick="playMusic()" style="
+button{
+margin-top:15px;
+padding:12px 25px;
+border:none;
+border-radius:30px;
 background:#7f5539;
 color:white;
-border:none;
-padding:12px 25px;
-border-radius:30px;
+cursor:pointer;
 font-size:16px;
-margin-top:25px;
-cursor:pointer;">
-🎵 Putar Lagu
-        </button>
-    </div>
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+<h2>🤎 Halaman Rahasia</h2>
+<p>Masukkan tanggal lahir bebe</p>
+
+<input type="password" id="pass" placeholder="DDMMYYYY">
+
+<br>
+<button onclick="checkPass()">Masuk</button>
+
+<p id="error" style="color:red;"></p>
 </div>
 
-<audio id="music" loop>
-    <source src="bergema-sampai-selamanya.mp3" type="audio/mpeg">
-</audio>
-</audio>
-
 <script>
-setTimeout(() => {
-    document.getElementById("closing").style.display = "block";
-}, 5000);
+function checkPass(){
+
+let password = "12022000";
+
+let input = document.getElementById("pass").value;
+
+if(input === password){
+window.location.href = "home.html";
+}else{
+document.getElementById("error").innerText = "Tanggal salah 😢";
+}
+}
+</script>
+
+</body>
+</html>}, 5000);
 
 for(let i=0;i<45;i++){
     let c=document.createElement("div");
