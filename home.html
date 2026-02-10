@@ -6,18 +6,20 @@
 <title>Special For You</title>
 
 <style>
+
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:'Poppins', sans-serif;
 background:linear-gradient(135deg,#f5ebe0,#e3d5ca,#d5bdaf);
 text-align:center;
-color:#6b4f4f;
 overflow:hidden;
+color:#6b4f4f;
 }
 
 .gift{
 margin-top:120px;
 cursor:pointer;
+transition:0.5s;
 }
 
 .gift img{
@@ -26,42 +28,49 @@ width:150px;
 
 .main{
 display:none;
-padding:25px;
+padding:30px;
 }
 
 .photo{
-width:220px;
-height:220px;
+width:230px;
+height:230px;
 border-radius:50%;
 border:8px solid white;
 object-fit:cover;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
-margin:20px 0;
+margin:25px 0;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
 }
 
 .text{
 opacity:0;
 transition:2s;
-max-width:520px;
-margin:18px auto;
 font-size:18px;
+max-width:520px;
+margin:20px auto;
 line-height:1.7;
 }
 
-.playBtn{
-margin-top:25px;
-background:#7f5539;
-color:white;
-border:none;
-padding:14px 26px;
-border-radius:30px;
-font-size:16px;
-cursor:pointer;
+.heart{
+position:fixed;
+font-size:20px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
 }
 
 </style>
 </head>
-
 <body>
 
 <!-- 🎁 GIFT -->
@@ -71,43 +80,94 @@ cursor:pointer;
 </div>
 
 <!-- 💖 CONTENT -->
-<div class="main" id="main">
+<div class="main" id="mainContent">
 
 <h1>🎂 Happy Birthday Depi Akbar ✨</h1>
 
 <img src="foto.jpg" class="photo">
 
 <div class="text" id="t1">
-Hari ini adalah hari yang spesial, hari dimana seseorang yang begitu berarti lahir ke dunia 🤎
+Hari ini adalah hari spesial, hari dimana seseorang yang sangat berharga lahir ke dunia.  
+Aku berharap setiap langkah yang bebe jalani selalu dipenuhi kebahagiaan, ketenangan, dan hal-hal baik yang tidak pernah habis 🤎
 </div>
 
 <div class="text" id="t2">
-Semoga setiap langkah bebe selalu dipenuhi kebahagiaan, ketenangan, dan hal-hal baik yang tidak pernah habis.
+Semoga semua mimpi yang bebe simpan diam-diam, semua harapan yang bebe perjuangkan, perlahan bisa terwujud satu per satu.  
+Semoga setiap usaha yang bebe lakukan selalu menemukan jalannya menuju kebahagiaan ✨
 </div>
 
 <div class="text" id="t3">
-Semoga semua mimpi dan harapan yang bebe simpan, perlahan menemukan jalannya satu per satu ✨
+Terima kasih karena sudah menjadi pribadi yang kuat, hangat, dan penuh perhatian.  
+Kehadiran bebe membawa warna, membawa cerita, dan membuat banyak hal terasa lebih berarti.
 </div>
 
 <div class="text" id="t4">
-Terima kasih sudah menjadi pribadi yang hangat dan membawa warna dalam banyak cerita.
+Aku berharap di umur yang baru ini, bebe selalu dikelilingi orang-orang yang tulus, selalu diberi kesehatan, dan selalu dipertemukan dengan hal-hal yang membuat bebe tersenyum 🤍
 </div>
 
 <div class="text" id="t5">
-Have the cutest birthday ever, bebe 💕
+Dan semoga, setiap hari yang bebe jalani ke depan dipenuhi dengan kebahagiaan sederhana yang membuat hati terasa tenang dan nyaman.
 </div>
 
-<button class="playBtn" onclick="playMusic()">
-🎵 Putar Lagu
-</button>
+<div class="text" id="t6">
+Have the cutest birthday ever, bebe 💕  
+Semoga hari ini menjadi awal dari cerita-cerita indah berikutnya.
+</div>
 
 </div>
+
+<audio id="music">
+<source src="https://drive.google.com/uc?export=download&id=195LFn8isrDQUHUq6xpBI6Og_VH6asnRp">
+</audio>
 
 <script>
 
 function openGift(){
+
 document.querySelector(".gift").style.display="none";
-document.getElementById("main").style.display="block";
+document.getElementById("mainContent").style.display="block";
+
+let music=document.getElementById("music");
+music.play();
+
+/* text timing */
+setTimeout(()=>showText("t1"),1000);
+setTimeout(()=>showText("t2"),7000);
+setTimeout(()=>showText("t3"),13000);
+setTimeout(()=>showText("t4"),19000);
+setTimeout(()=>showText("t5"),25000);
+setTimeout(()=>showText("t6"),31000);
+
+createHearts();
+}
+
+function showText(id){
+document.getElementById(id).style.opacity=1;
+}
+
+function createHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="🤎";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),6000);
+
+},500);
+
+}
+
+</script>
+
+</body>
+</html>document.getElementById("main").style.display="block";
 
 setTimeout(()=>show("t1"),1000);
 setTimeout(()=>show("t2"),5000);
