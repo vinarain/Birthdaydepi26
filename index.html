@@ -1,50 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Secret Page</title>
 
 <style>
 body{
 margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#ede0d4,#ddb892,#b08968);
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#f5ebe0,#e3d5ca,#d5bdaf);
 display:flex;
 justify-content:center;
 align-items:center;
 height:100vh;
 text-align:center;
+color:#6b4f4f;
 }
 
 .box{
 background:white;
-padding:30px;
+padding:30px 25px;
 border-radius:20px;
 box-shadow:0 10px 25px rgba(0,0,0,0.2);
+width:280px;
+}
+
+h2{
+margin-bottom:10px;
+}
+
+p{
+font-size:14px;
+opacity:0.8;
 }
 
 input{
+width:100%;
 padding:12px;
-border-radius:10px;
+margin-top:15px;
+border-radius:12px;
 border:1px solid #ccc;
-margin-top:10px;
-width:220px;
-text-align:center;
 font-size:16px;
+text-align:center;
 }
 
 button{
-margin-top:15px;
-padding:12px 25px;
+margin-top:18px;
+padding:12px;
+width:100%;
 border:none;
 border-radius:30px;
 background:#7f5539;
 color:white;
-cursor:pointer;
 font-size:16px;
+cursor:pointer;
+}
+
+.error{
+color:#c0392b;
+font-size:14px;
+margin-top:10px;
 }
 </style>
-
 </head>
+
 <body>
 
 <div class="box">
@@ -53,43 +73,24 @@ font-size:16px;
 
 <input type="password" id="pass" placeholder="DDMMYYYY">
 
-<br>
 <button onclick="checkPass()">Masuk</button>
 
-<p id="error" style="color:red;"></p>
+<div class="error" id="error"></div>
 </div>
 
 <script>
 function checkPass(){
 
-let password = "12022000";
-
-let input = document.getElementById("pass").value;
+const password = "12022000";
+const input = document.getElementById("pass").value;
 
 if(input === password){
 window.location.href = "home.html";
 }else{
-document.getElementById("error").innerText = "Tanggal salah 😢";
+document.getElementById("error").innerText = "Tanggal lahir salah 😢";
 }
 }
 </script>
 
-</body>
-</html>}, 5000);
-
-for(let i=0;i<45;i++){
-    let c=document.createElement("div");
-    c.className="confetti";
-    c.style.left=Math.random()*100+"vw";
-    c.style.animationDuration=(4+Math.random()*3)+"s";
-    c.style.backgroundColor=`hsl(30, 40%, ${60+Math.random()*20}%)`;
-    document.body.appendChild(c);
-}
-</script>
-<script>
-function playMusic(){
-    document.getElementById("music").play();
-}
-</script>
 </body>
 </html>
